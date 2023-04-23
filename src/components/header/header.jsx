@@ -6,7 +6,9 @@ const Header = ()=>{
         <div className={s.header}>
             <div className={s.content}>
                 <img className={s.logo} src="/photo/to-do-list.png" alt="" />
+                <p className={s.p}>ToDo</p>
             </div>
+            
         </div>
     )
 }

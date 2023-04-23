@@ -10,7 +10,17 @@
     margin: 0 auto;
     display: flex;
     justify-content: start;
+    align-items: center;
 }
 .logo{
     width: 41px;
+}
+.p{
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    margin-left: 20px;
 }
