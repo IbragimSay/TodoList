@@ -2,13 +2,12 @@ import React from "react";
 import PostItem from "../PostItem/PostItem";
 
 
-const PostList =({posts, remove})=>{
+const PostList =({posts, remove, editTodo})=>{
     return(
         <div>
-        <h1>список задач</h1>
         {posts.map((post, index) =>
         
-        <PostItem remove={remove} number={index + 1} key={post.id} post={post}/>
+        <PostItem editTodo={editTodo} remove={remove} number={index + 1} key={post.id} post={post}/>
         )}
         </div>
     )

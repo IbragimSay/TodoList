@@ -12,7 +12,7 @@ const PostItem = (props)=>{
                 </div>
                 <div className={s.buttons}>
                   <Link to={"/Editing"}>
-                    <button className={s.button_corect}>редактировать</button>
+                    <button onClick={()=>props.editTodo(props.post.title, props.post.body, props.post.id)} className={s.button_corect}>редактировать</button>
                   </Link>
                   <button onClick={() =>{
                     props.remove(props.post)

@@ -20,8 +20,29 @@ function App() {
 
   const createPost = (newPost)=>{
     setPosts([...posts, newPost])
-
   }
+
+  const [title, setTitle]=useState('')
+  const [body, setBody] = useState('')
+  const [id, setId] = useState('')
+
+  function editTodo(ttitle, bbody, id){
+    setId(id)
+    setTitle(ttitle)
+    setBody(bbody)
+  }
+  function saveEdit (id){
+    let newTodo = [...posts].map(item =>{
+      if (item.id == id){
+        item.title =  title
+        item.body = body }
+    })
+    
+    setTitle('')
+    setBody('')
+    console.log(id)
+  }
+  
  
   const removePost = (post)=>{
     setPosts(posts.filter(p => p.id !== post.id))
@@ -36,16 +57,14 @@ function App() {
       <Add_new_task  />
       <Routes>
         <Route path='/add' element={  <Input_for_add_post  create={createPost} />} />
-        <Route path='/Editing' element={  <Editing  />} />
+        <Route path='/Editing' element={  <Editing id={id} saveEdit={saveEdit} title={title} setTitle={setTitle} body={body} setBody={setBody}   />} />
       </Routes>
-      
 
-     
       
       
       {posts.length !== 0
-      ?     <PostList remove={removePost} posts={posts}/>
-      : <h2>net post</h2>
+      ?     <PostList editTodo={editTodo} remove={removePost} posts={posts}/>
+      : <h2 className='notTodo'>нет задач</h2>
       }
 
 

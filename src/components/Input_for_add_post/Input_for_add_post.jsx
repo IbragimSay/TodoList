@@ -9,10 +9,13 @@ const Input_for_add_post = ({create})=>{
 
     const add_newPost = (e)=>{
         e.preventDefault()
-        const newPost = {
-           ...post, id: Date.now()
+        if(post.body, post.title !== ''){
+
+            const newPost = {
+               ...post, id: Date.now()
+            }
+            create(newPost)
         }
-        create(newPost)
         setPost({title: '', body: ''}) 
       }
 
