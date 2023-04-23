@@ -12,11 +12,10 @@ import s from "./components/Input_for_add_post/input_for_add_post.module.css"
 import PostList from './components/PostList/PostList';
 
 function App() {
-  const [posts, setPosts ] = useState([
-    {id: 1, title: "заголовок", body: "текст внутри блока "},
-    {id: 2, title: "заголовок", body: "текст внутри блока "},
-    {id: 3, title: "заголовок", body: "текст внутри блока "},
+  const [posts, setPosts ] = useState ( JSON.parse(localStorage.getItem("blogPosts")) ||  [
+
   ]) 
+  localStorage.setItem("blogPosts", JSON.stringify(posts))
 
   const createPost = (newPost)=>{
     setPosts([...posts, newPost])
