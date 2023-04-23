@@ -13,7 +13,8 @@ const Editing = (props)=>{
                 <input onChange={e=>{props.setBody(e.target.value)}} value={props.body} placeholder="описание:" className={s.input2}  type="text" />
                 <Link to={"/"}><button className={s.button}>отмена</button></Link>
                 <Link to={'/'}>
-                    <button onClick={()=>{props.saveEdit(props.id)}}  className={s.button2}>редактировать</button>
+                    <button onClick={()=>{ window.confirm('нажмите "Ок" если хотите отредактировать задачу') ?props.saveEdit(props.id)
+                    : console.log('')}}  className={s.button2}>редактировать</button>
                 </Link>
             </div>
         </div>

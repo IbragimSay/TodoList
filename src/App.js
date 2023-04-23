@@ -39,7 +39,6 @@ function App() {
     
     setTitle('')
     setBody('')
-    console.log(id)
   }
 
  
@@ -55,6 +54,7 @@ function App() {
       <Header posts={posts} />
       <Add_new_task  />
       <Routes>
+        <Route path='/' element={ <div></div>} />
         <Route path='/add' element={  <Input_for_add_post  create={createPost} />} />
         <Route path='/Editing' element={  <Editing id={id} saveEdit={saveEdit} title={title} setTitle={setTitle} body={body} setBody={setBody}   />} />
       </Routes>
@@ -68,7 +68,7 @@ function App() {
 
 
     
-  
+      
     </div>
   );
 }

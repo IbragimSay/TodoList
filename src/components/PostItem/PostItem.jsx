@@ -20,13 +20,12 @@ const PostItem = (props)=>{
                   <Link to={"/Editing"}>
                     <button onClick={()=>props.editTodo(props.post.title, props.post.body, props.post.id)} className={s.button_corect}>редактировать</button>
                   </Link>
-                  <button onClick={() =>{ window.confirm('вы хотите Удалить эту задачу') ?
-                    props.remove(props.post) : console.log('dkklsjd')
+                  <button onClick={() =>{ window.confirm('нажмите "Ок" если хотите удалить задачу') ?
+                    props.remove(props.post) : console.log('')
                   }} className={s.button_remove}>удалить</button>
                   <input onClick={()=>{ setActive(!active ) 
-                  console.log(active)}}   className={s.checkbox} type='checkbox'/>
+                  }}   className={s.checkbox} type='checkbox'/>
                 </div>
-
               </div>  
         </div>
     )

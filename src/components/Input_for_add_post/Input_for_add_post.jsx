@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "./input_for_add_post.module.css"
-
+import { Link } from "react-router-dom";
 
 
 const Input_for_add_post = ({create})=>{
