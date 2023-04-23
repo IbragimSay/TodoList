@@ -41,7 +41,7 @@ function App() {
     setBody('')
     console.log(id)
   }
-  
+
  
   const removePost = (post)=>{
     setPosts(posts.filter(p => p.id !== post.id))
